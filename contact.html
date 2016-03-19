@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ARK Electronics</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<header>
+		<div>
+			<img id="logo" src="arkLogo.png" alt="Logo"><h1>ARK Electronics</h1>
+		</div>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html">home</a></li>
+			<li><a href="about.html">about</a></li>
+			<li><a href="services.html">services</a></li>
+			<li><a href="contact.html">contact</a></li>
+		</ul>
+	</nav>
+	<article>
+		<div id="container">
+			<p>It's strongly encouraged that you contact us before visiting as we do not have set business hours. Nevertheless, someone should be here to help you most days during the week and we will do our very best to fit your schedule should you request to visit us during a specific time.</p>
+
+			<div id="mail_btn" data-popup-open="popup-1">Click here to e-mail us</div>
+
+			<p>519-212-6749 &nbsp;|&nbsp; 206 Laurentian Dr., Kitchener, ON, N2E 2B5</p>
+
+			<div id="map"></div>
+
+
+			<!-- This is our e-mail form pop-up -->
+			<div class="popup" data-popup="popup-1">
+			    <div class="popup-inner">
+			        <h2>E-mail Form</h2>
+			        <p>This will contain the e-mail form, it's still under construction. Please come back soon!</p>
+			        <p><a data-popup-close="popup-1" href="#">Close</a></p>
+			        <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+			    </div>
+			</div>
+			<!-- end of our e-mail form pop-up -->
+
+		</div>
+	</article>
+	<!-- scripts placed at the end to optimize page load -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="main.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script><!-- add a callback to the <script> tag loading the API that will call the initMap function (inside of contact.js) after the API has loaded -->
+	<script src="contact.js"></script>
+</body>
+</html>

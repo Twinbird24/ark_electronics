@@ -1,0 +1,206 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu); /* font used for nav buttons */
+@import url(https://fonts.googleapis.com/css?family=Orbitron); /* font used for main header */
+
+html {
+	height: 100%; /* allows the main content to stretch the entire hiehgt of the web browser, rather than just the height of the content */
+	box-sizing: border-box; /* applies natural border-box model to all elements */
+	overflow-y: scroll; /* adds a scroll bar to every page */
+}
+
+/* applies border-box model to pseudo classes as well, adds inheritence */
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+    background-image: url("tweed.png");
+    height: 100%; /* also allows the main content to stretch the entire height (used in cominbation with html height rule) */
+    display: flex; /* prevents the main content from being pushed down (i.e. by the header and nav sections) and causing unncessary scroll/ overflow */
+  	flex-direction: column; /* sets the main axis/ direction to be 'top to bottom' */
+  	font-family: Arial, Helvetica, sans-serif;
+}
+
+article p {
+	padding: 25px 25px 0px 25px;
+	margin: 0;
+	border: 0;
+	text-indent: 40px; /* indents the first line of each paragraph */
+}
+
+article {
+	background-color: #ededed;
+	width: 600px;
+	margin: 0px auto 0px auto; /* left/ right auto margins center the content */
+	border-top-left-radius:5px;
+	border-top-right-radius:50px;
+	border-left: 5px solid #d3d3d3;
+	border-right: 5px solid #f6f6f6;
+	flex: 1 1 auto; /* allows the article to stretch to the bottom of the viewport, without this, the height would only be the height of
+	whatever the content is (i.e. the paragraph's height) */ 
+}
+
+header {
+	width: 100%;
+	text-align: center; /* this centers whatever content is inside the header */
+	border-bottom: 2px solid orange;
+}
+
+header div {
+	width: 600px;
+	margin: 0 auto; /* this centers the div */
+}
+
+h1 {
+	font-family: Orbitron;
+	color: orange;
+	margin-top: 25px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    padding-top: 11px;
+    width: 400px
+}
+
+nav {
+	width: 600px;
+	margin: 0px auto 0px auto;/* this centers the navigation */
+	padding-left: 10px;
+	font-family: Ubuntu;
+}
+
+nav ul {
+	list-style-type: none; /* removes the bullet-point that's common with ul elements */
+	margin: 0;
+	padding: 0; 
+}
+
+nav li {
+	float: left; /* allows li elements to float next to eachother, rather than being stacked on top of eachother taking up the full width of their container */
+}
+
+nav li a {
+	height: 44px;
+	color: white;
+	padding: 0px 8px 0px 8px;
+	text-decoration: none;
+	background-color: transparent;
+	border-bottom: 0px solid #ededed; /* will be animated-in on hover */
+	border-top: 0px solid orange; /* will be animated-in on hover */
+	transition: border 200ms; /* the transition is applies to the border only, at a speed of 200ms */
+	display: table-cell; /* this, as well as the vertical-align, ensures text is vertically centered every time inside the nav buttons*/
+	vertical-align: middle;
+}
+
+/* when nav button is hovered over */
+nav li a:hover {
+	border-bottom: 13px solid #ededed;
+	border-top: 13px solid orange;
+}
+
+/* when the mouse is held down on nav button */
+nav li a:active {
+	border-bottom: 5px solid #ededed;
+}
+
+#logo {
+	height: 70px;
+	float: left;
+	margin-bottom: 2px;
+}
+
+/* used to add bottom padding to the last paragrph on the page */
+article div p:nth-last-child(1) {
+	padding-bottom: 45px;
+}
+
+#container {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+/* styling for the contact page mail button*/
+#mail_btn {
+	background-color: orange;
+	width: 200px;
+	padding: 10px 10px;
+	margin: 15px auto 0; /* centers the div on the page */
+	text-align: center; /* centers the text within the container */
+	border-radius: 5px; /* rounds the corners of the button */
+	color: white;
+	cursor: pointer;
+}
+
+#mail_btn:hover {
+	background-color: #cc8400; /* changes background to slightly darker shade on hover */
+}
+
+#map {
+    width: 450px;
+    height: 350px;
+    margin: 25px auto;
+}
+
+/* spaces out the list items */
+article div ul li {
+	padding-bottom: 15px;
+}
+
+article div ul {
+	margin-bottom: 0;
+	margin-right: 25px;
+}
+
+/* start of the styling for our e-mail pop-up form */
+
+/* outer */
+.popup {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,0.75); /* using RGBA color values to enable transparency */
+}
+ 
+/* inner */
+.popup-inner {
+    max-width: 700px;
+    width: 90%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 2px 6px rgba(0,0,0,1);
+    border-radius: 3px;
+    background: #fff;
+}
+ 
+/* close button */
+.popup-close {
+    width: 30px;
+    height: 30px;
+    padding-top: 4px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transition: ease 0.25s all;
+    transform: translate(50%, -50%);
+    border-radius: 1000px;
+    background: rgba(0,0,0,0.8);
+    font-family: Arial, Sans-Serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 100%;
+    color: #fff;
+}
+ 
+.popup-close:hover {
+    transform: translate(50%, -50%) rotate(180deg);
+    background: rgba(0,0,0,1);
+    text-decoration: none;
+}
+
+/* end of the styling for our e-mail pop-up form */
