@@ -43,6 +43,7 @@ header {
 	width: 100%;
 	text-align: center; /* this centers whatever content is inside the header */
 	border-bottom: 2px solid orange;
+	height: 97px;
 }
 
 header div {
